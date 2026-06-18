@@ -1,0 +1,6 @@
+{
+  "name": "SIGADIS RSUD Kalabahi",
+  "description": "Siklus Menu Gizi Diet Khusus & Media Informasi Edukasi Gizi Digital Instalasi Gizi RSUD Kalabahi",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

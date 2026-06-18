@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Overwrite emerald palette to Dusty Pink / Dusty Rose */
+  --color-emerald-50: #fff4f4;
+  --color-emerald-100: #ffe5e5;
+  --color-emerald-150: #ffd5d5;
+  --color-emerald-200: #ffc2c2;
+  --color-emerald-300: #ffa2a2;
+  --color-emerald-400: #f4808a;
+  --color-emerald-500: #e25e6a; /* Vibrant Dusty Pink Primary */
+  --color-emerald-600: #cc4552; /* Dusty Pink Accent */
+  --color-emerald-700: #b0303e; /* Deep Dusty Rose */
+  --color-emerald-800: #911e2a; /* Bold Dusty Berry */
+  --color-emerald-900: #73121d; /* Dark Rose Wine Heading */
+  --color-emerald-950: #4f050d; /* High Contrast Deep Maroon */
+
+  /* Overwrite teal palette to Soft Peach / Terracotta tones */
+  --color-teal-50: #fff6f0;
+  --color-teal-100: #ffecd6;
+  --color-teal-150: #ffd3b5;
+  --color-teal-200: #fcc19e;
+  --color-teal-300: #f79a6d;
+  --color-teal-400: #f27943;
+  --color-teal-500: #ea5b1e; /* Warm Peach Orange */
+  --color-teal-600: #d4470d; /* Deep Peach Accent */
+  --color-teal-700: #b83606; /* Terracotta Rust */
+  --color-teal-750: #9e2a01;
+  --color-teal-800: #8c2401; /* Dusty Terracotta */
+  --color-teal-850: #781e01;
+  --color-teal-900: #611801; /* Deep Rich Rust */
+}
+
+/* Scrollbar styling for smooth navigation rows */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom animation for leaflet slide alerts and mobile drawer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in-left {
+  animation: slideInLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
