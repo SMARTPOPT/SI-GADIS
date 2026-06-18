@@ -22,6 +22,7 @@ export default function MenuTab() {
 
   // Helper adjustment function to simulate how food modifications work in RSUD Kalabahi
   const adjustForDiet = (foodName: string, category: 'karbo' | 'hewani' | 'nabati' | 'sayur' | 'buah' | 'snack') => {
+    if (!foodName || foodName === "-") return { name: "-", status: "Normal" };
     if (activeMenuDiet === "biasa") return { name: foodName, status: "Normal" };
 
     if (activeMenuDiet === "lambung") {
@@ -42,14 +43,7 @@ export default function MenuTab() {
         }
       }
       if (category === 'buah') {
-        if (foodName.includes("Nanas") || foodName.includes("Jeruk")) {
-          return { name: "Papaya Iris Matang Sehat", status: "Aman dari Asam" };
-        }
-      }
-      if (category === 'snack') {
-        if (foodName && (foodName.includes("Kolek") || foodName.includes("Santan"))) {
-          return { name: "Puding Tepung Maizena Lembut", status: "Bahan Halus" };
-        }
+        return { name: "Pisang Masak / Jus Apel Saring", status: "Mudah Dicerna" };
       }
     }
 
@@ -81,7 +75,7 @@ export default function MenuTab() {
       {/* Intro info card - Styled in Vibrant Palette */}
       <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-emerald-100 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4" id="menu-intro-bar">
         <div className="space-y-1">
-          <h2 className="text-slate-900 font-black text-xl tracking-tight flex items-center gap-2">
+          <h2 className="text-xl font-black text-emerald-900 flex items-center gap-2">
             <Calendar className="w-6 h-6 text-emerald-600" />
             <span>Siklus Menu Makanan 10 Hari Gizi</span>
           </h2>
@@ -95,7 +89,7 @@ export default function MenuTab() {
               key={role}
               id={`btn-menu-diet-${role}`}
               onClick={() => setActiveMenuDiet(role)}
-              className={`text-xs px-3.5 py-2 rounded-full border-2 font-bold transition-all ${
+              className={`text-xs px-3.5 py-2 rounded-full border-2 font-bold transition-all cursor-pointer ${
                 activeMenuDiet === role
                   ? "bg-emerald-500 border-emerald-500 text-white shadow-sm"
                   : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
@@ -107,7 +101,7 @@ export default function MenuTab() {
         </div>
       </div>
 
-      {/* Ten-Day navigation Calendar - Styled in Vibrant Theme */}
+      {/* Days Selection Map of RSUD */}
       <div className="bg-white p-5 rounded-3xl border-2 border-emerald-100 space-y-4 shadow-sm" id="calendar-bar">
         <span className="text-slate-600 text-[10px] uppercase font-black tracking-widest block">
           PILIH HARI SIKLUS (Klik tombol di bawah untuk melihat hidangan gizi):
@@ -119,9 +113,9 @@ export default function MenuTab() {
             return (
               <button
                 key={dayNum}
-                id={`btn-select-day-${dayNum}`}
+                id={`btn-day-select-${dayNum}`}
                 onClick={() => setSelectedDay(dayNum)}
-                className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border-2 font-black text-xs sm:text-sm flex flex-col items-center justify-center transition-all ${
+                className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border-2 font-black text-xs sm:text-sm flex flex-col items-center justify-center transition-all cursor-pointer ${
                   isSelected
                     ? "bg-emerald-600 border-emerald-600 text-white shadow-md scale-105"
                     : "bg-slate-50 hover:bg-emerald-50 hover:border-emerald-300 border-slate-200 text-slate-700"
@@ -135,28 +129,25 @@ export default function MenuTab() {
         </div>
       </div>
 
-      {/* Grid Menu Saji: Pagi (Orange), Siang (Emerald), Malam (Blue) - Styled in Vibrant Palette */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="menu-distribution-grid">
+      {/* Main Dishes Showcase Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6" id="dishes-showcase-grid">
         
-        {/* PAGI (Orange theme) */}
+        {/* Breakfast Card */}
         <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-orange-100 hover:shadow-md transition-all flex flex-col justify-between space-y-5" id="meal-pagi-card">
           <div className="space-y-4">
-            
-            {/* Header */}
             <div className="flex items-center justify-between border-b border-orange-100 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2.5 bg-orange-100 text-orange-600 rounded-xl">
                   <Coffee className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">Makan Pagi</h3>
-                  <span className="text-[10px] text-slate-400 font-mono font-bold">DISTRIBUSI: 06:30 WITA</span>
+                <div className="text-left">
+                  <span className="text-[9px] text-orange-500 font-extrabold uppercase tracking-wider block">WAKTU MAKAN</span>
+                  <h4 className="font-black text-slate-800 text-sm">PAGI (07:00 WITA)</h4>
                 </div>
               </div>
-              <span className="bg-orange-500 text-white font-black text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider">SARAPAN</span>
+              <span className="bg-orange-500 text-white font-black text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider">UTAMA</span>
             </div>
 
-            {/* List components */}
             <div className="space-y-3.5 text-xs">
               
               <div className="space-y-1">
@@ -190,7 +181,7 @@ export default function MenuTab() {
 
             </div>
           </div>
-
+          
           {/* Snack Pagi bar */}
           {currentDayMenu.snackPagi && (
             <div className="bg-orange-50/50 p-3.5 rounded-2xl border-2 border-orange-100 flex items-center gap-2">
@@ -198,36 +189,32 @@ export default function MenuTab() {
               <div className="space-y-0.5">
                 <span className="text-[9px] font-black uppercase tracking-widest text-orange-850 block">Selingan Pagi (10:00 WITA)</span>
                 <p className="text-xs text-slate-800 font-bold leading-normal">{adjustForDiet(currentDayMenu.snackPagi, 'snack').name}</p>
-                {activeMenuDiet !== "biasa" && <span className="text-[8.5px] text-orange-700 font-bold block">Disaring halus</span>}
               </div>
             </div>
           )}
 
         </div>
 
-        {/* LUNCH / SIANG (Emerald theme) */}
+        {/* Lunch Card */}
         <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-emerald-150 hover:shadow-md transition-all flex flex-col justify-between space-y-5" id="meal-siang-card">
           <div className="space-y-4">
-            
-            {/* Header */}
             <div className="flex items-center justify-between border-b border-emerald-100 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2.5 bg-emerald-100 text-emerald-600 rounded-xl">
                   <Utensils className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">Makan Siang</h3>
-                  <span className="text-[10px] text-slate-400 font-mono font-bold">DISTRIBUSI: 12:00 WITA</span>
+                <div className="text-left">
+                  <span className="text-[9px] text-emerald-500 font-extrabold uppercase tracking-wider block">WAKTU MAKAN</span>
+                  <h4 className="font-black text-slate-800 text-sm">SIANG (12:00 WITA)</h4>
                 </div>
               </div>
               <span className="bg-emerald-500 text-white font-black text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider">UTAMA</span>
             </div>
 
-            {/* List components */}
             <div className="space-y-3.5 text-xs">
               
               <div className="space-y-1">
-                <span className="text-slate-400 text-[10px] uppercase font-mono font-bold block">Karbohidrat</span>
+                <span className="text-slate-400 text-[10px] uppercase font-mono font-bold block">Karbohidrat Utama</span>
                 <p className="text-slate-800 font-bold">{adjustForDiet(currentDayMenu.lunch.karbohidrat, 'karbo').name}</p>
                 {activeMenuDiet !== "biasa" && <span className="inline-block mt-0.5 bg-emerald-50 text-emerald-700 text-[8.5px] font-bold px-2 py-0.5 rounded-full">{adjustForDiet(currentDayMenu.lunch.karbohidrat, 'karbo').status}</span>}
               </div>
@@ -258,43 +245,36 @@ export default function MenuTab() {
             </div>
           </div>
 
-          {/* Snack Sore bar */}
-          {currentDayMenu.snackSore && (
-            <div className="bg-emerald-50/55 p-3.5 rounded-2xl border-2 border-emerald-100 flex items-center gap-2">
-              <Apple className="w-5 h-5 text-emerald-600 shrink-0" />
-              <div className="space-y-0.5">
-                <span className="text-[9px] font-black uppercase tracking-widest text-emerald-800 block">Selingan Sore (16:00 WITA)</span>
-                <p className="text-xs text-slate-800 font-bold leading-normal">{adjustForDiet(currentDayMenu.snackSore, 'snack').name}</p>
-                {activeMenuDiet !== "biasa" && <span className="text-[8.5px] text-emerald-700 font-bold block">Disaring halus</span>}
-              </div>
+          <div className="bg-emerald-50/55 p-3.5 rounded-2xl border-2 border-emerald-100 flex items-center gap-2">
+            <Apple className="w-5 h-5 text-emerald-600 shrink-0" />
+            <div className="space-y-0.5">
+              <span className="text-[9px] font-black uppercase tracking-widest text-emerald-850 block">Selingan Sore (16:00 WITA)</span>
+              <p className="text-xs text-slate-800 font-bold leading-normal">Camilan Tradisional atau Susu Organik Diet</p>
             </div>
-          )}
+          </div>
 
         </div>
 
-        {/* DINNER / MALAM (Blue theme) */}
+        {/* Dinner Card */}
         <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-blue-100 hover:shadow-md transition-all flex flex-col justify-between space-y-5" id="meal-malam-card">
           <div className="space-y-4">
-            
-            {/* Header */}
             <div className="flex items-center justify-between border-b border-blue-100 pb-3">
               <div className="flex items-center gap-2.5">
-                <div className="p-2.5 bg-blue-100 text-blue-700 rounded-xl">
+                <div className="p-2.5 bg-blue-100 text-blue-600 rounded-xl">
                   <Moon className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">Makan Malam</h3>
-                  <span className="text-[10px] text-slate-400 font-mono font-bold">DISTRIBUSI: 18:00 WITA</span>
+                <div className="text-left">
+                  <span className="text-[9px] text-blue-500 font-extrabold uppercase tracking-wider block">WAKTU MAKAN</span>
+                  <h4 className="font-black text-slate-800 text-sm">MALAM (18:30 WITA)</h4>
                 </div>
               </div>
-              <span className="bg-blue-500 text-white font-black text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider">PULIH</span>
+              <span className="bg-blue-500 text-white font-black text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider">UTAMA</span>
             </div>
 
-            {/* List components */}
             <div className="space-y-3.5 text-xs">
               
               <div className="space-y-1">
-                <span className="text-slate-400 text-[10px] uppercase font-mono font-bold block">Karbohidrat</span>
+                <span className="text-slate-400 text-[10px] uppercase font-mono font-bold block">Karbohidrat Makan</span>
                 <p className="text-slate-800 font-bold">{adjustForDiet(currentDayMenu.dinner.karbohidrat, 'karbo').name}</p>
                 {activeMenuDiet !== "biasa" && <span className="inline-block mt-0.5 bg-blue-50 text-blue-700 text-[8.5px] font-bold px-2 py-0.5 rounded-full">{adjustForDiet(currentDayMenu.dinner.karbohidrat, 'karbo').status}</span>}
               </div>
@@ -325,8 +305,8 @@ export default function MenuTab() {
             </div>
           </div>
 
-          <div className="p-3 bg-slate-50 text-slate-500 text-[10px] text-center rounded-2xl border-2 border-dashed border-slate-200 font-medium">
-            *Semua menu diolah higienis dan disajikan tertutup hangat.*
+          <div className="bg-blue-55/40 p-3.5 rounded-2xl border-2 border-blue-100 flex items-center justify-center text-center text-[10px] text-blue-800 font-bold">
+            💡 Kurangi porsi sebelum istirahat malam demi kestabilan metabolisme.
           </div>
 
         </div>

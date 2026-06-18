@@ -7,10 +7,11 @@ import React, { useState } from "react";
 import BerandaTab from "./components/BerandaTab";
 import DietTab from "./components/DietTab";
 import MenuTab from "./components/MenuTab";
+import MenuRsdTab from "./components/MenuRsdTab";
 import EdukasiTab from "./components/EdukasiTab";
 import UmpanBalikTab from "./components/UmpanBalikTab";
 import HubungiTab from "./components/HubungiTab";
-import { Utensils, Heart, BookOpen, MessageSquare, PhoneCall, Sparkles, Activity, Menu, X } from "lucide-react";
+import { Utensils, Heart, BookOpen, MessageSquare, PhoneCall, Sparkles, Activity, Menu, X, FileText } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab ] = useState("beranda");
@@ -25,6 +26,7 @@ export default function App() {
   const navItems = [
     { id: "beranda", label: "Beranda", icon: Activity },
     { id: "diet", label: "Diet Khusus Saya", icon: Heart },
+    { id: "menu_rsd", label: "Siklus RSD Kalabahi", icon: FileText },
     { id: "menu", label: "Siklus Menu Gizi", icon: Utensils },
     { id: "edukasi", label: "Edukasi & Konsul AI", icon: BookOpen },
     { id: "feedback", label: "Umpan Balik Pasien", icon: MessageSquare },
@@ -80,14 +82,19 @@ export default function App() {
           </div>
         </div>
 
-        {/* Mobile Sub-banner with Institutional Info */}
-        <div className="md:hidden bg-slate-50 border-t border-slate-100 px-3 py-1.5 flex flex-col sm:flex-row sm:items-center sm:justify-between text-center sm:text-left gap-0.5 text-slate-500 text-[10px] font-bold" id="mobile-institution-strip">
-          <div className="text-slate-750 font-black flex items-center justify-center sm:justify-start gap-1">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Instalasi Gizi RSUD Kalabahi
+        {/* Mobile Sub-banner with Institutional Info & SIGADIS Meaning */}
+        <div className="md:hidden bg-slate-50 border-t border-slate-100 px-3 py-2 flex flex-col gap-1.5 text-center text-slate-500 font-bold animate-fade-in" id="mobile-institution-strip">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px]">
+            <div className="text-slate-755 font-black flex items-center justify-center sm:justify-start gap-1">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              Instalasi Gizi RSUD Kalabahi
+            </div>
+            <div className="text-[9px] text-slate-500 font-bold uppercase tracking-wider">
+              Pemerintah Kabupaten Alor, NTT
+            </div>
           </div>
-          <div className="text-[9px] text-slate-500 font-bold uppercase tracking-wider">
-            Pemerintah Kabupaten Alor, NTT
+          <div className="text-[8px] sm:text-[9px] text-emerald-700 bg-emerald-50/70 border border-emerald-100 py-1.5 px-2 rounded-lg font-black uppercase tracking-wide">
+            SIGADIS: Sistem Informasi Gizi Rawat Inap & Diet Sesuai Penyakit
           </div>
         </div>
 
@@ -249,6 +256,7 @@ export default function App() {
         {/* Render Active Tab */}
         {activeTab === "beranda" && <BerandaTab onNavigate={handleNavigate} />}
         {activeTab === "diet" && <DietTab />}
+        {activeTab === "menu_rsd" && <MenuRsdTab />}
         {activeTab === "menu" && <MenuTab />}
         {activeTab === "edukasi" && <EdukasiTab />}
         {activeTab === "feedback" && <UmpanBalikTab />}

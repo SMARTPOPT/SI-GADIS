@@ -460,6 +460,177 @@ export const CYCLE_MENUS: DailyMenu[] = [
   }
 ];
 
+export const OFFICIAL_UNIT_GIZI_MENUS: DailyMenu[] = [
+  {
+    day: 1,
+    breakfast: {
+      karbohidrat: "Bubur",
+      laukHewani: "Telur Balado",
+      laukNabati: "-",
+      sayur: "Tumis Sawi",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Asam Manis, Sate Ayam",
+      laukNabati: "Tempe/Tahu Mendoan",
+      sayur: "Sop Makaroni",
+      buah: "Pisang / Pepaya"
+    },
+    dinner: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Goreng Tepung, Ayam Goreng Saos",
+      laukNabati: "Tahu/Tempe Bumbu Saos",
+      sayur: "Orak-arik Sayuran",
+      buah: "-"
+    }
+  },
+  {
+    day: 2,
+    breakfast: {
+      karbohidrat: "Bubur",
+      laukHewani: "Telur Rebus",
+      laukNabati: "-",
+      sayur: "Tumis (Kacang Panjang, Jagung, Toge)",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Nasi / Bubur",
+      laukHewani: "Ikan Goreng, Semur Daging",
+      laukNabati: "Perkedel Tahu/Tempe",
+      sayur: "Capcay",
+      buah: "Pisang / Pepaya"
+    },
+    dinner: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Brengkes, Ayam Bumbu Kuning",
+      laukNabati: "Orak-arik Tahu/Tempe",
+      sayur: "Bening Bayam Jagung",
+      buah: "-"
+    }
+  },
+  {
+    day: 3,
+    breakfast: {
+      karbohidrat: "Bubur",
+      laukHewani: "Telur Mata Sapi",
+      laukNabati: "-",
+      sayur: "Tumis (Bayam, Tauge)",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Bumbu Tomat, Ayam Goreng Tepung",
+      laukNabati: "Tahu/Tempe Bacem",
+      sayur: "Tumis (Sawi, Jagung)",
+      buah: "Pisang / Pepaya"
+    },
+    dinner: {
+      karbohidrat: "Nasi / Bubur",
+      laukHewani: "Ikan Goreng Rica-rica, Semur Ayam",
+      laukNabati: "Tahu/Tempe Goreng",
+      sayur: "Sop Kacang Merah",
+      buah: "-"
+    }
+  },
+  {
+    day: 4,
+    breakfast: {
+      karbohidrat: "Bubur Ayam",
+      laukHewani: "Ayam Suwir (Sajian Bubur Ayam)",
+      laukNabati: "-",
+      sayur: "-",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Goreng Bumbu Semur, Ayam Rica-rica",
+      laukNabati: "Tahu/Tempe Balado",
+      sayur: "Sayur Lodeh",
+      buah: "Pisang / Pepaya"
+    },
+    dinner: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Brengkes, Ayam Goreng",
+      laukNabati: "Oseng Tahu/Tempe",
+      sayur: "Sop Jagung Manis",
+      buah: "-"
+    }
+  },
+  {
+    day: 5,
+    breakfast: {
+      karbohidrat: "Bubur",
+      laukHewani: "Telur Dadar",
+      laukNabati: "-",
+      sayur: "Tumis (Labu Siam, Sawi)",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Goreng Rica-rica, Ayam Bakar",
+      laukNabati: "Tahu/Tempe Tumis",
+      sayur: "Soto",
+      buah: "Pisang / Pepaya"
+    },
+    dinner: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Pepes Ikan, Ayam Bumbu Rendang",
+      laukNabati: "Sambal Goreng Tahu/Tempe",
+      sayur: "Tumis Sawi",
+      buah: "-"
+    }
+  },
+  {
+    day: 6,
+    breakfast: {
+      karbohidrat: "Bubur",
+      laukHewani: "Telur Bumbu Saos",
+      laukNabati: "-",
+      sayur: "Tumis (Kacang Panjang, Tauge)",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Goreng Bumbu Tomat, Ayam Goreng Tepung",
+      laukNabati: "Nuget Tahu/Tempe",
+      sayur: "Sop (Oyong, Labu, Wortel, Mie)",
+      buah: "Pisang / Pepaya"
+    },
+    dinner: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Asam Manis, Opor Ayam",
+      laukNabati: "Tahu/Tempe Bumbu Balado",
+      sayur: "Rumpu-rampe",
+      buah: "-"
+    }
+  },
+  {
+    day: 7,
+    breakfast: {
+      karbohidrat: "Bubur",
+      laukHewani: "Telur Semur",
+      laukNabati: "-",
+      sayur: "Bayam + Jagung Manis",
+      buah: "-"
+    },
+    lunch: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Goreng Biasa, Ayam Asam Manis",
+      laukNabati: "Tempe/Tahu Semur",
+      sayur: "Sayur Sawi",
+      buah: "Buah Brangan (Baranga) / Ambon"
+    },
+    dinner: {
+      karbohidrat: "Bubur / Nasi",
+      laukHewani: "Ikan Rica-rica, Ayam Kecap",
+      laukNabati: "Tahu/Tempe Mendoan",
+      sayur: "Sayuran Mie Putih",
+      buah: "-"
+    }
+  }
+];
+
 export const NUTRITIONISTS: Officer[] = [
   {
     name: "Ibu Maria L. Mau, S.Tr.Gizi",

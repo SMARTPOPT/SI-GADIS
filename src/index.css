@@ -5,19 +5,19 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  /* Overwrite emerald palette to Dusty Pink / Dusty Rose */
-  --color-emerald-50: #fff4f4;
-  --color-emerald-100: #ffe5e5;
-  --color-emerald-150: #ffd5d5;
-  --color-emerald-200: #ffc2c2;
-  --color-emerald-300: #ffa2a2;
-  --color-emerald-400: #f4808a;
-  --color-emerald-500: #e25e6a; /* Vibrant Dusty Pink Primary */
-  --color-emerald-600: #cc4552; /* Dusty Pink Accent */
-  --color-emerald-700: #b0303e; /* Deep Dusty Rose */
-  --color-emerald-800: #911e2a; /* Bold Dusty Berry */
-  --color-emerald-900: #73121d; /* Dark Rose Wine Heading */
-  --color-emerald-950: #4f050d; /* High Contrast Deep Maroon */
+  /* Overwrite emerald palette to vibrant, medical-grade Sweet Pink & Rose shades */
+  --color-emerald-50: #fff1f2;   /* Rose-50 Lightest Pink Background */
+  --color-emerald-100: #ffe4e6;  /* Rose-100 Light Pink Border */
+  --color-emerald-150: #fecdd3;  /* Rose-200 Soft Pink Border */
+  --color-emerald-200: #fda4af;  /* Rose-300 Medium Soft Pink */
+  --color-emerald-300: #f43f5e;  /* Rose-500 Vibrant Medium Rose Pink */
+  --color-emerald-400: #e11d48;  /* Rose-600 Active Rose */
+  --color-emerald-500: #db2777;  /* Pink-600 High Impact Vibrant Pink */
+  --color-emerald-600: #be185d;  /* Pink-700 Premium Rose Magenta */
+  --color-emerald-700: #9d174d;  /* Pink-800 Rich Wine Pink Text */
+  --color-emerald-800: #831843;  /* Pink-900 Bold Dark Berry Pink */
+  --color-emerald-900: #500724;  /* Rose-950 Elegant Deep Plum Heading */
+  --color-emerald-950: #300314;  /* Ultra Deep Midnight Pink Black */
 
   /* Overwrite teal palette to Soft Peach / Terracotta tones */
   --color-teal-50: #fff6f0;
