@@ -11,7 +11,9 @@ import MenuRsdTab from "./components/MenuRsdTab";
 import EdukasiTab from "./components/EdukasiTab";
 import UmpanBalikTab from "./components/UmpanBalikTab";
 import HubungiTab from "./components/HubungiTab";
-import { Utensils, Heart, BookOpen, MessageSquare, PhoneCall, Sparkles, Activity, Menu, X, FileText } from "lucide-react";
+import PamfletTab from "./components/PamfletTab";
+import MenuSnackTab from "./components/MenuSnackTab";
+import { Utensils, Heart, BookOpen, MessageSquare, PhoneCall, Sparkles, Activity, Menu, X, FileText, Printer, Cookie } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab ] = useState("beranda");
@@ -27,8 +29,10 @@ export default function App() {
     { id: "beranda", label: "Beranda", icon: Activity },
     { id: "diet", label: "Diet Khusus Saya", icon: Heart },
     { id: "menu_rsd", label: "Siklus Menu RSD Kalabahi", icon: FileText },
-    { id: "menu", label: "Siklus Menu Gizi", icon: Utensils },
+    { id: "menu_snack", label: "Siklus Snack Diet", icon: Cookie },
+    { id: "menu", label: "Siklus Menu Alternatif", icon: Utensils },
     { id: "edukasi", label: "Edukasi & Konsul AI", icon: BookOpen },
+    { id: "pamflet", label: "Pamflet Digital", icon: Printer },
     { id: "feedback", label: "Umpan Balik Pasien", icon: MessageSquare },
     { id: "hubungi", label: "Hubungi Petugas", icon: PhoneCall },
   ];
@@ -257,8 +261,10 @@ export default function App() {
         {activeTab === "beranda" && <BerandaTab onNavigate={handleNavigate} />}
         {activeTab === "diet" && <DietTab />}
         {activeTab === "menu_rsd" && <MenuRsdTab />}
+        {activeTab === "menu_snack" && <MenuSnackTab />}
         {activeTab === "menu" && <MenuTab />}
         {activeTab === "edukasi" && <EdukasiTab />}
+        {activeTab === "pamflet" && <PamfletTab />}
         {activeTab === "feedback" && <UmpanBalikTab />}
         {activeTab === "hubungi" && <HubungiTab />}
 

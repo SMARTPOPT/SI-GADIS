@@ -176,7 +176,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
           <span className="w-8 h-1 bg-emerald-500 rounded-sm"></span>
         </h2>
         
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-6" id="main-features-grid">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-6" id="main-features-grid">
           
           {/* Card 1 */}
           <div 
@@ -189,7 +189,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
                 🥗
               </div>
               <div className="space-y-1 p-0 text-left">
-                <h3 className="text-sm sm:text-xl font-black text-slate-800 group-hover:text-orange-600 transition-colors">Diet Khusus Saya</h3>
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-orange-600 transition-colors">Diet Khusus</h3>
                 <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Informasi detail rencana diet harian berdasarkan diagnosa medis.</p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
                 📋
               </div>
               <div className="space-y-1 p-0 text-left">
-                <h3 className="text-sm sm:text-xl font-black text-slate-800 group-hover:text-emerald-600 transition-colors">Siklus Menu RSD Kalabahi</h3>
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-emerald-600 transition-colors">Siklus RSD</h3>
                 <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Jadwal siklus menu makanan 7 hari unit gizi Rumah Sakit Daerah Kalabahi.</p>
               </div>
             </div>
@@ -218,7 +218,27 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
             </div>
           </div>
 
-          {/* Card 3 */}
+          {/* Card 3 - Siklus Menu Snack Diet */}
+          <div 
+            onClick={() => onNavigate("menu_snack")}
+            className="group bg-white hover:bg-rose-50/10 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-rose-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
+            id="card-nav-menu-snack"
+          >
+            <div className="space-y-2.5 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-16 sm:h-16 bg-rose-100 rounded-xl sm:rounded-2xl flex items-center justify-center text-rose-600 text-xl sm:text-3xl shrink-0 group-hover:scale-105 transition-transform">
+                🍪
+              </div>
+              <div className="space-y-1 p-0 text-left">
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-rose-600 transition-colors">Snack Diet</h3>
+                <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Siklus snack (makanan selingan) pagi & sore untuk diet khusus terstandar.</p>
+              </div>
+            </div>
+            <div className="text-left">
+              <span className="inline-block px-2.5 py-1 sm:px-4 sm:py-1.5 bg-rose-500 text-white text-[10px] sm:text-xs font-bold rounded-full group-hover:bg-rose-600 transition-colors">Lihat Snack</span>
+            </div>
+          </div>
+
+          {/* Card 4 - Siklus Menu Alternatif */}
           <div 
             onClick={() => onNavigate("menu")}
             className="group bg-white hover:bg-emerald-50/25 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-emerald-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
@@ -229,8 +249,8 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
                 🍽️
               </div>
               <div className="space-y-1 p-0 text-left">
-                <h3 className="text-sm sm:text-xl font-black text-slate-800 group-hover:text-emerald-600 transition-colors">Siklus Menu</h3>
-                <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Jadwal menu makanan pasien untuk Siklus ke-1 s/d Siklus ke-10 RSUD.</p>
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-emerald-600 transition-colors">Menu Alternatif</h3>
+                <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Jadwal menu makanan gizi alternatif untuk asuhan rawat inap pasien.</p>
               </div>
             </div>
             <div className="text-left">
@@ -238,7 +258,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
             </div>
           </div>
 
-          {/* Card 3 */}
+          {/* Card 5 */}
           <div 
             onClick={() => onNavigate("edukasi")}
             className="group bg-white hover:bg-blue-50/25 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-blue-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
@@ -249,7 +269,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
                 📚
               </div>
               <div className="space-y-1 p-0 text-left">
-                <h3 className="text-sm sm:text-xl font-black text-slate-800 group-hover:text-blue-600 transition-colors">Edukasi Gizi</h3>
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-blue-600 transition-colors">Edukasi Gizi</h3>
                 <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Kumpulan tips, leaflet digital, dan panduan pola makan sehat.</p>
               </div>
             </div>
@@ -258,7 +278,27 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
             </div>
           </div>
 
-          {/* Card 4 */}
+          {/* Card 6 - Pamflet Digital */}
+          <div 
+            onClick={() => onNavigate("pamflet")}
+            className="group bg-white hover:bg-rose-50/25 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-rose-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
+            id="card-nav-pamflet"
+          >
+            <div className="space-y-2.5 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-16 sm:h-16 bg-rose-100 rounded-xl sm:rounded-2xl flex items-center justify-center text-rose-600 text-xl sm:text-3xl shrink-0 group-hover:scale-105 transition-transform">
+                📰
+              </div>
+              <div className="space-y-1 p-0 text-left">
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-rose-600 transition-colors">Pamflet Digital</h3>
+                <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Cetak atau unduh brosur resmi lipat untuk info asuhan gizi rawat inap.</p>
+              </div>
+            </div>
+            <div className="text-left">
+              <span className="inline-block px-2.5 py-1 sm:px-4 sm:py-1.5 bg-rose-500 text-white text-[10px] sm:text-xs font-bold rounded-full group-hover:bg-rose-600 transition-colors">Unduh Brosur</span>
+            </div>
+          </div>
+
+          {/* Card 7 */}
           <div 
             onClick={() => onNavigate("feedback")}
             className="group bg-white hover:bg-purple-50/25 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-purple-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
@@ -269,7 +309,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
                 💬
               </div>
               <div className="space-y-1 p-0 text-left">
-                <h3 className="text-sm sm:text-xl font-black text-slate-800 group-hover:text-purple-600 transition-colors">Umpan Balik</h3>
+                <h3 className="text-sm sm:text-lg font-black text-slate-800 group-hover:text-purple-600 transition-colors">Umpan Balik</h3>
                 <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Sampaikan kritik dan saran untuk perbaikan kualitas layanan gizi.</p>
               </div>
             </div>
