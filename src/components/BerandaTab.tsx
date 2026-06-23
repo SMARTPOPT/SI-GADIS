@@ -176,7 +176,7 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
           <span className="w-8 h-1 bg-emerald-500 rounded-sm"></span>
         </h2>
         
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6" id="main-features-grid">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-6" id="main-features-grid">
           
           {/* Card 1 */}
           <div 
@@ -198,7 +198,27 @@ export default function BerandaTab({ onNavigate }: BerandaTabProps) {
             </div>
           </div>
 
-          {/* Card 2 */}
+          {/* Card 2 - Siklus Menu RSD Kalabahi */}
+          <div 
+            onClick={() => onNavigate("menu_rsd")}
+            className="group bg-white hover:bg-emerald-50/25 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-emerald-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"
+            id="card-nav-menu-rsd"
+          >
+            <div className="space-y-2.5 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-16 sm:h-16 bg-emerald-100 rounded-xl sm:rounded-2xl flex items-center justify-center text-emerald-600 text-xl sm:text-3xl shrink-0 group-hover:scale-105 transition-transform">
+                📋
+              </div>
+              <div className="space-y-1 p-0 text-left">
+                <h3 className="text-sm sm:text-xl font-black text-slate-800 group-hover:text-emerald-600 transition-colors">Siklus Menu RSD Kalabahi</h3>
+                <p className="text-slate-500 text-[10px] sm:text-xs leading-normal sm:leading-relaxed">Jadwal siklus menu makanan 7 hari unit gizi Rumah Sakit Daerah Kalabahi.</p>
+              </div>
+            </div>
+            <div className="text-left">
+              <span className="inline-block px-2.5 py-1 sm:px-4 sm:py-1.5 bg-emerald-500 text-white text-[10px] sm:text-xs font-bold rounded-full group-hover:bg-emerald-600 transition-colors">Buka Layanan</span>
+            </div>
+          </div>
+
+          {/* Card 3 */}
           <div 
             onClick={() => onNavigate("menu")}
             className="group bg-white hover:bg-emerald-50/25 p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-emerald-100 shadow-sm cursor-pointer transition-all flex flex-col justify-between space-y-3 sm:space-y-4"

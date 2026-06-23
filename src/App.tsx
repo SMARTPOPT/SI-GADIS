@@ -26,7 +26,7 @@ export default function App() {
   const navItems = [
     { id: "beranda", label: "Beranda", icon: Activity },
     { id: "diet", label: "Diet Khusus Saya", icon: Heart },
-    { id: "menu_rsd", label: "Siklus RSD Kalabahi", icon: FileText },
+    { id: "menu_rsd", label: "Siklus Menu RSD Kalabahi", icon: FileText },
     { id: "menu", label: "Siklus Menu Gizi", icon: Utensils },
     { id: "edukasi", label: "Edukasi & Konsul AI", icon: BookOpen },
     { id: "feedback", label: "Umpan Balik Pasien", icon: MessageSquare },

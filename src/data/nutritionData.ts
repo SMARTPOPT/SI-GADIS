@@ -633,24 +633,31 @@ export const OFFICIAL_UNIT_GIZI_MENUS: DailyMenu[] = [
 
 export const NUTRITIONISTS: Officer[] = [
   {
-    name: "Ibu Maria L. Mau, S.Tr.Gizi",
-    role: "Kepala Instalasi Gizi RSUD Kalabahi",
-    phone: "6281234567890",
+    name: "Elkar Meliati B Fobia, S.Gz",
+    role: "Kepala Instalasi Gizi",
+    phone: "6282329180003",
     isAvailable: true,
     schedule: "Senin - Sabtu (08:00 - 15:00)"
   },
   {
-    name: "Bapak Robertus K. Pen, S.Gz",
-    role: "Penanggung Jawab Diet & Menu Pasien",
-    phone: "6282198765432",
+    name: "Debora Maata, Amd.Gz",
+    role: "Penanggung Jawab Diet dan Menu Pasien",
+    phone: "628144320508",
     isAvailable: true,
     schedule: "Senin - Sabtu (07:30 - 14:00)"
   },
   {
-    name: "Ibu Kristina Wel, Amd.Gz",
-    role: "Ahli Gizi Konseling & Poliklinik Gizi",
-    phone: "6285211223344",
-    isAvailable: false,
-    schedule: "Selasa & Kamis (09:00 - 13:00)"
+    name: "Litvrina Barus, S.Gz",
+    role: "Ahli Gizi Konseling / Admin",
+    phone: "6282369002924",
+    isAvailable: true,
+    schedule: "Senin - Sabtu (08:00 - 15:00)"
+  },
+  {
+    name: "Yasinta A Manu, Amd.Gz",
+    role: "Ahli Gizi Konseling",
+    phone: "6285242282416",
+    isAvailable: true,
+    schedule: "Senin - Sabtu (08:30 - 13:00)"
   }
 ];
